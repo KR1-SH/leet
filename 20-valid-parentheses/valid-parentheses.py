@@ -9,18 +9,15 @@ class Solution(object):
         stack = []
 
         for char in s:
-            print(char)
             if char in brack.values():
                 stack.append(char)
-            else: 
-                if not stack or stack[-1] != brack[char]:
+            else:
+                empty = (len(stack)==0) 
+                if empty or stack[-1] != brack[char]:
                     return False 
                 stack.pop()
 
-        if len(stack) == 0:
-            return True
-        else:
-            return False
+        return len(stack) == 0
 
             
         
