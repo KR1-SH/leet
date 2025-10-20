@@ -9,6 +9,7 @@ class Solution(object):
         stack = []
 
         for char in s:
+            print(char)
             if char in brack.values():
                 stack.append(char)
             else: 
@@ -16,7 +17,10 @@ class Solution(object):
                     return False 
                 stack.pop()
 
-        return not stack
+        if len(stack) == 0:
+            return True
+        else:
+            return False
 
             
         
